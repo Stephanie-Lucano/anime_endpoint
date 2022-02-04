@@ -1,6 +1,9 @@
 const express = require('express');
 const anime = express.Router();
 const { getAllAnimes, addNewAnime } = require('../queries/animes');
+const reviewController = require("./reviewsController")
+
+anime.use("/:anime_id/reviews", reviewController) 
 
 // here we use the function we wrote inside of our queries. 
 // we have to await it because we dont want this file to move 
